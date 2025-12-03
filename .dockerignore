@@ -1,90 +1,45 @@
-# Git and version control
+# Git history (CRITICAL - 486 MB)
 .git
-.gitignore
-.github/
 
-# Documentation
+# Documentation (not needed in production)
 *.md
 docs/
 README*
 
-# Development files
+# Development/Local files
 .env
-.env.local
 .vscode/
 .idea/
 __pycache__/
 *.pyc
 *.pyo
-*.pyd
-.Python
-*.so
-.coverage
-.pytest_cache/
-.mypy_cache/
 
 # OS files
 .DS_Store
 Thumbs.db
-*.swp
-*.swo
 
-# Flutter files (not needed for backend)
-New-Legal-Connect/
-*.apk
-*.aab
-android/
-ios/
-windows/
-linux/
-macos/
-.dart_tool/
-.flutter-plugins
-.flutter-plugins-dependencies
-build/
 
-# Logs
-*.log
-logs/
 
-# Temporary files
-tmp/
-temp/
-.tmp/
-
-# Local Database (use Railway Volume instead)
+# Local database (800+ MB - using Chroma Cloud)
 ChromaDB/
 *.sqlite3
 *.db
 
-# Virtual environments
+# Virtual environments (not needed - Docker creates its own)
 venv/
 .venv/
-env/
 
-# Test files
+# Test files (development only)
 test_*.py
-*_test.py
 debug_*.py
 demo_*.py
 diagnose_*.py
-generate_*.py
 chroma_test.py
 
 # Generated files
 *.pdf
 chat_history.json
 
-# Batch scripts
+# Scripts (not needed in production)
 *.bat
 *.sh
-
-# Node modules (if any)
-node_modules/
-
-# IDE files
-*.sublime-project
-*.sublime-workspace
-.DS_Store
-.AppleDouble
-.LSOverride
