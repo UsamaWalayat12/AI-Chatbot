@@ -105,13 +105,13 @@ try:
 
  
 
-            print(f"  ✓ HttpClient created (v2 API) with headers")
+                   print(f"  ✓ HttpClient created (v2 API) with headers")
             
-            col = client_chroma.get_or_create_collection(
-                name=COLLECTION
-            )
+                        col = client_chroma.get_or_create_collection(
+                             name=COLLECTION
+                        )
 
-            print(f"  ✓ Collection '{COLLECTION}' connected (cloud)")
+                  print(f"  ✓ Collection '{COLLECTION}' connected (cloud)")
 
             
             # Test count
