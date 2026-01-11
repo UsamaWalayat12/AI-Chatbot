@@ -86,22 +86,22 @@ try:
         
         try:
            from chromadb import Client
-from chromadb.config import Settings
-import os
+           from chromadb.config import Settings
+           import os
 
 # Make sure your environment variables are set:
 # CHROMA_API_KEY, CHROMA_TENANT, CHROMA_DATABASE
 
-client_chroma = Client(
-    Settings(
-        chroma_api_impl="rest",                     # use REST API
-        chroma_server_host="https://api.trychroma.com",  # Chroma Cloud endpoint
-        chroma_server_http_port=8000,               # port is fixed for cloud
-        tenant_id=os.environ.get("CHROMA_TENANT"),  # from env variable
-        database_id=os.environ.get("CHROMA_DATABASE"),
-        api_key=os.environ.get("CHROMA_API_KEY")
-    )
-)
+           client_chroma = Client(
+                   Settings(
+                       chroma_api_impl="rest",                     # use REST API
+                       chroma_server_host="https://api.trychroma.com",  # Chroma Cloud endpoint
+                       chroma_server_http_port=8000,               # port is fixed for cloud
+                       tenant_id=os.environ.get("CHROMA_TENANT"),  # from env variable
+                       database_id=os.environ.get("CHROMA_DATABASE"),
+                      api_key=os.environ.get("CHROMA_API_KEY")
+                  )
+           )
 
  
 
