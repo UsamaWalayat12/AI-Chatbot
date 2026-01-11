@@ -85,15 +85,26 @@ try:
         print(f"  Attempting cloud connection...")
         
         try:
-            # Use HttpClient with direct headers for Chroma Cloud (v2 API)
-            from chromadb.config import Settings
-            client_chroma = chromadb.HttpClient(
-                host='api.trychroma.com',
-                ssl=True,
-                tenant=CHROMA_TENANT,
-                database=CHROMA_DATABASE,
-                headers={'X-Chroma-Token': CHROMA_API_KEY}
-            )
+           from chromadb import Client
+from chromadb.config import Settings
+import os
+
+# Make sure your environment variables are set:
+# CHROMA_API_KEY, CHROMA_TENANT, CHROMA_DATABASE
+
+client_chroma = Client(
+    Settings(
+        chroma_api_impl="rest",                     # use REST API
+        chroma_server_host="https://api.trychroma.com",  # Chroma Cloud endpoint
+        chroma_server_http_port=8000,               # port is fixed for cloud
+        tenant_id=os.environ.get("CHROMA_TENANT"),  # from env variable
+        database_id=os.environ.get("CHROMA_DATABASE"),
+        api_key=os.environ.get("CHROMA_API_KEY")
+    )
+)
+
+ 
+
             print(f"  ✓ HttpClient created (v2 API) with headers")
             
             col = client_chroma.get_or_create_collection(
