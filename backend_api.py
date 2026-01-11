@@ -363,27 +363,4 @@ async def global_exception_handler(request, exc):
     )
 
 # Run server
-if __name__ == "__main__":
-    import uvicorn
-    import os
-    
-    # Get port from environment (Railway sets this automatically)
-    port = int(os.getenv("PORT", 8000))
-    host = os.getenv("HOST", "0.0.0.0")
-    
-    print("=" * 60)
-    print("🚀 Pakistani Legal RAG Assistant API")
-    print("=" * 60)
-    print(f"📡 Server starting at: http://{host}:{port}")
-    print(f"📚 API Documentation: http://{host}:{port}/docs")
-    print(f"🤖 AI Model: {GEMINI_MODEL}")
-    print(f"🌍 Environment: {os.getenv('ENVIRONMENT', 'development')}")
-    print("=" * 60)
-    print("\n✅ Server is ready! You can now connect your Flutter app.\n")
-    
-    uvicorn.run(
-        app,
-        host=host,
-        port=port,
-        log_level="info"
-    )
+ 
