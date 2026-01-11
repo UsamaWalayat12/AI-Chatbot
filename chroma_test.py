@@ -2,7 +2,7 @@
 """
 RAG pipeline (retrieval + generation) for Pakistani legal documents (ChromaDB).
 - Robust chroma query handling
-- Phrase + keyword re-ranking
+- Phrase + keyword re-ranking 
 - Prompt builder that enforces: "Use ONLY the evidence below"
 - Hides filenames in output, extracts judge/court/date/clause metadata heuristically
 - Calls Gemini (google-genai) using GEMINI_API_KEY from env
