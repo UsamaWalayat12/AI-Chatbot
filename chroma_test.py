@@ -1,4 +1,4 @@
- # rag_query.py
+# rag_query.py
 """
 RAG pipeline (retrieval + generation) for Pakistani legal documents (ChromaDB).
 - Robust chroma query handling
@@ -85,22 +85,19 @@ try:
         print(f"  Attempting cloud connection...")
         
         try:
-            from chromadb import HttpClient
+            from chromadb import CloudClient
             import os
 
             # Make sure your environment variables are set:
             # CHROMA_API_KEY, CHROMA_TENANT, CHROMA_DATABASE
 
-            client_chroma = HttpClient(
-                host="https://api.trychroma.com",
+            client_chroma = CloudClient(
                 tenant=os.environ.get("CHROMA_TENANT"),
                 database=os.environ.get("CHROMA_DATABASE"),
-                headers={
-                    "Authorization": f"Bearer {os.environ.get('CHROMA_API_KEY')}"
-                }
+                api_key=os.environ.get("CHROMA_API_KEY")
             )
 
-            print(f"  ✓ HttpClient created for Chroma Cloud")
+            print(f"  ✓ CloudClient created for Chroma Cloud (v2 API)")
             
             col = client_chroma.get_or_create_collection(
                 name=COLLECTION
